@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
           ref={imgRef}
           className="w-full h-full object-cover object-[center_30%] brightness-[0.28] saturate-[0.7] sepia-[0.3] will-change-transform"
           src="/images/ligia.jpeg"
-          alt="Lígia Cavallera"
+          alt="Ligia Cavallera"
         />
       </div>
 
@@ -96,7 +96,7 @@ export const Hero: React.FC = () => {
           className="hero-anim font-serif text-[clamp(2.5rem,10vw,8rem)] font-bold leading-[0.85] tracking-tighter text-[#F7EDD8] cursor-default will-change-transform"
         >
           <span className="block opacity-80 text-[0.4em] tracking-[0.2em] mb-4 font-sans font-light">CACHAÇA PARDIN</span>
-          <span className="block text-brand-amber-light drop-shadow-2xl">LÍGIA CAVALLERA</span>
+          <span className="block text-brand-amber-light drop-shadow-2xl">LIGIA CAVALLERA</span>
           <em className="block not-italic font-light text-brand-paper text-[0.35em] tracking-[0.25em] mt-4 uppercase">
             Edição Especial
           </em>
