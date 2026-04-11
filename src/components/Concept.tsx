@@ -35,7 +35,7 @@ export const Concept: React.FC = () => {
               ref={imgRef}
               className="w-full h-[400px] md:h-[600px] object-cover object-center scale-110 transition-transform duration-1000 group-hover:scale-[1.15] will-change-transform"
               src="/images/barril.png"
-              alt="Barril de Carvalho Lígia Cavallera"
+              alt="Barril de Carvalho Ligia Cavallera"
             />
             <div className="absolute inset-4 border border-brand-amber/25 rounded-[2px] pointer-events-none" />
             <span className="absolute bottom-6 left-6 text-[9px] tracking-[0.22em] uppercase text-brand-amber/70 font-medium">
@@ -56,7 +56,7 @@ export const Concept: React.FC = () => {
             <div className="concept-reveal w-12 h-px bg-gradient-to-r from-brand-amber to-transparent mb-8" />
 
             <div className="concept-reveal space-y-4 text-sm md:text-base font-light text-brand-paper/60 leading-relaxed">
-              <p>Lígia Cavallera nasce de um experimento inédito: cachaça artesanal envelhecida em barris de carvalho enquanto música country toca continuamente ao redor.</p>
+              <p>Ligia Cavallera nasce de um experimento inédito: cachaça artesanal envelhecida em barris de carvalho enquanto música country toca continuamente ao redor.</p>
               <p>As vibrações sonoras a 85 BPM permeiam a madeira e interferem diretamente no processo de maturação. O resultado é uma bebida que carrega não apenas o tempo — mas o ritmo.</p>
             </div>
 
