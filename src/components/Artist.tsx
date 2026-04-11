@@ -44,11 +44,11 @@ export const Artist: React.FC = () => {
             <div className="artist-reveal space-y-4 text-sm md:text-base font-light text-brand-paper/60 leading-relaxed max-w-[420px]">
               <p>Lígia Cavallera não é apenas uma imagem — ela é a frequência que molda o sabor. Uma artista de música country criada por inteligência artificial para encarnar o espírito da marca.</p>
               <p>Ela não é modelo. Ela é a cachaça. É a terra, o barril, o som que ecoa entre as tábuas de carvalho enquanto a bebida amadurece. Uma identidade nascida de pixels — mas que sabe exatamente onde pisa.</p>
-              <p>Desenvolvida com IA generativa e direção de arte da Nova AI Solutions, Lígia representa uma nova era do branding artesanal: onde tecnologia e tradição se encontram no mesmo copo.</p>
+              <p>Desenvolvida com IA generativa e direção de arte da LabFuture, Lígia representa uma nova era do branding artesanal: onde tecnologia e tradição se encontram no mesmo copo.</p>
             </div>
 
             <div className="artist-reveal flex flex-wrap gap-2 mt-8">
-              {['Personagem de IA', 'Identidade Visual', 'Nova AI Solutions'].map(tag => (
+              {['Personagem de IA', 'Identidade Visual', 'LabFuture'].map(tag => (
                 <span key={tag} className="text-[9px] tracking-[0.16em] uppercase px-4 py-1.5 border border-brand-amber/30 text-brand-amber/70 rounded-full">
                   {tag}
                 </span>
@@ -68,7 +68,7 @@ export const Artist: React.FC = () => {
             <div className="artist-reveal absolute -bottom-6 -right-4 md:-right-6 bg-brand-bg/90 border border-brand-amber/35 p-5 md:p-7 rounded-sm backdrop-blur-xl shadow-2xl">
               <div className="text-[9px] tracking-[0.22em] uppercase text-brand-paper/60 mb-2">Criada com</div>
               <div className="font-serif text-2xl md:text-3xl font-bold text-brand-amber-light leading-none">IA Gen</div>
-              <div className="text-[10px] text-brand-paper/40 mt-1">Direção · Nova AI Solutions</div>
+              <div className="text-[10px] text-brand-paper/40 mt-1">Direção · LabFuture</div>
             </div>
           </div>
 
