@@ -42,9 +42,9 @@ export const Artist: React.FC = () => {
             <div className="artist-reveal w-12 h-px bg-gradient-to-r from-brand-amber to-transparent mb-8" />
 
             <div className="artist-reveal space-y-4 text-sm md:text-base font-light text-brand-paper/60 leading-relaxed max-w-[420px]">
-              <p>Lígia Cavallera não é apenas uma imagem — ela é a frequência que molda o sabor. Uma artista de música country criada por inteligência artificial para encarnar o espírito da marca.</p>
+              <p>Ligia Cavallera não é apenas uma imagem — ela é a frequência que molda o sabor. Uma artista de música country criada por inteligência artificial para encarnar o espírito da marca.</p>
               <p>Ela não é modelo. Ela é a cachaça. É a terra, o barril, o som que ecoa entre as tábuas de carvalho enquanto a bebida amadurece. Uma identidade nascida de pixels — mas que sabe exatamente onde pisa.</p>
-              <p>Desenvolvida com IA generativa e direção de arte da LabFuture, Lígia representa uma nova era do branding artesanal: onde tecnologia e tradição se encontram no mesmo copo.</p>
+              <p>Desenvolvida com IA generativa e direção de arte da LabFuture, Ligia representa uma nova era do branding artesanal: onde tecnologia e tradição se encontram no mesmo copo.</p>
             </div>
 
             <div className="artist-reveal flex flex-wrap gap-2 mt-8">
@@ -62,7 +62,7 @@ export const Artist: React.FC = () => {
                 ref={imgRef}
                 className="w-full h-[400px] md:h-[640px] object-cover object-top scale-110 will-change-transform"
                 src="/images/ligia.jpeg"
-                alt="Lígia Cavallera — Personagem de IA"
+                alt="Ligia Cavallera — Personagem de IA"
               />
             </div>
             <div className="artist-reveal absolute -bottom-6 -right-4 md:-right-6 bg-brand-bg/90 border border-brand-amber/35 p-5 md:p-7 rounded-sm backdrop-blur-xl shadow-2xl">
