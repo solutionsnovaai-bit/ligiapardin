@@ -5,18 +5,36 @@ import { Waveform } from './Waveform';
 export const Hero: React.FC = () => {
   const imgRef = useRef<HTMLImageElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const rafRef = useRef<number>(0);
+  const scrollYRef = useRef(0);
 
   const BPM = 85;
   const BEAT_MS = 60000 / BPM;
 
   useEffect(() => {
+    // Detecta mobile — desliga parallax em telas pequenas (principal causa de lag)
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    let ticking = false;
+
     const onScroll = () => {
-      if (imgRef.current) {
-        imgRef.current.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1.1)`;
+      scrollYRef.current = window.scrollY;
+      if (isMobile) return; // sem parallax no mobile
+      if (!ticking) {
+        rafRef.current = requestAnimationFrame(() => {
+          if (imgRef.current) {
+            imgRef.current.style.transform =
+              `translateY(${scrollYRef.current * 0.35}px) scale(1.1)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
+
     window.addEventListener('scroll', onScroll, { passive: true });
 
+    // Entrada inicial
     const tl = gsap.timeline({ delay: 0.3 });
     tl.fromTo('.hero-anim',
       { y: 40, opacity: 0 },
@@ -24,22 +42,33 @@ export const Hero: React.FC = () => {
     );
     gsap.fromTo('#hero-scroll', { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 1.2 });
 
+    // Pulso no BPM — reduzido em mobile para evitar repaint constante
     const pulseTl = gsap.timeline({ repeat: -1, repeatDelay: BEAT_MS / 1000 - 0.15 });
-    pulseTl
-      .to(titleRef.current, {
-        scale: 1.015,
-        textShadow: '0 0 40px rgba(191,111,0,0.5), -2px 0 rgba(191,111,0,0.5), 2px 0 rgba(94,33,41,0.5)',
-        duration: 0.12,
-        ease: 'power2.out',
-      })
-      .to(titleRef.current, {
-        scale: 1,
-        textShadow: 'none',
-        duration: (BEAT_MS / 1000) * 0.6,
-        ease: 'power3.out',
-      });
+    if (!isMobile) {
+      pulseTl
+        .to(titleRef.current, {
+          scale: 1.015,
+          textShadow: '0 0 40px rgba(191,111,0,0.5), -2px 0 rgba(191,111,0,0.5), 2px 0 rgba(94,33,41,0.5)',
+          duration: 0.12,
+          ease: 'power2.out',
+        })
+        .to(titleRef.current, {
+          scale: 1,
+          textShadow: 'none',
+          duration: (BEAT_MS / 1000) * 0.6,
+          ease: 'power3.out',
+        });
+    } else {
+      // Mobile: apenas opacity sutil, sem scale/textShadow (evita composite layers extras)
+      pulseTl
+        .to(titleRef.current, { opacity: 0.85, duration: 0.1, ease: 'power2.out' })
+        .to(titleRef.current, { opacity: 1, duration: (BEAT_MS / 1000) * 0.6, ease: 'power3.out' });
+    }
 
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
   }, [BEAT_MS]);
 
   return (
